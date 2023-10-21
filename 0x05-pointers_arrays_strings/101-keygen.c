@@ -1,30 +1,29 @@
-#include "main.h"
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <time.h>
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * main - entry point
+ * Description: my keygen.
+ * Return: 0.
  */
+
 int main(void)
 {
-    int nb;
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	time_t t;
 
-    nb = _atoi("98");
-    printf("%d\n", nb);
-    nb = _atoi("-402");
-    printf("%d\n", nb);
-    nb = _atoi("          ------++++++-----+++++--98");
-    printf("%d\n", nb);
-    nb = _atoi("214748364");
-    printf("%d\n", nb);
-    nb = _atoi("0");
-    printf("%d\n", nb);
-    nb = _atoi("Suite 402");
-    printf("%d\n", nb);
-    nb = _atoi("         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA             ");
-    printf("%d\n", nb);
-    nb = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
-    printf("%d\n", nb);
-    return (0);
+	srand((unsigned int) time(&t));
+	while (j < 2772)
+	{
+		i = rand() % 128;
+		if ((j + i) > 2772)
+			break;
+		j += i;
+		k++;
+		printf("%c", i);
+	}
+	printf("%c\n", (2772 - j));
+	return (0);
 }
